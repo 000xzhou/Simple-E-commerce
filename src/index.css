@@ -27,3 +27,21 @@ code {
   background: #000;
   color: white;
 }
+
+table,
+th,
+td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  padding: 1rem;
+}
+
+.none {
+  display: none;
+}
+
+.cart-length {
+  color: red;
+  background: rgb(95, 95, 95);
+  padding-inline: 1rem;
+}
