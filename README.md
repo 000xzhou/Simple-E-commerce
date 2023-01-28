@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
-
+Currently working on it
 What it can do:
 - Add to cart
 - Delete from cart
