@@ -11,8 +11,11 @@ const items = [
 ]
 
 const App = () => {
-  const [cartItems, setCartItems] = useState([{ id: 1, name: 'product 1', price: 2 }])
-  console.log(cartItems)
+  const [cartItems, setCartItems] = useState([
+    { id: 1, name: 'product 1', price: 2, quantity: 1 },
+    { id: 2, name: 'product 2', price: 4, quantity: 1 },
+  ])
+
   return (
     <Routes>
       <Route path="/" exact element={<Layout cartItems={cartItems} />} >
