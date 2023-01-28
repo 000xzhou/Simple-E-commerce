@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom"
+import { useState } from "react"
+import Layout from './components/Layout'
+import Items from "./components/Items"
+import Cart from './components/Cart'
 
-function App() {
+const items = [
+  { id: 1, name: 'product 1', price: 2 },
+  { id: 2, name: 'product 2', price: 4 },
+  { id: 3, name: 'product 3', price: 6 }
+]
+
+const App = () => {
+  const [cartItems, setCartItems] = useState([])
+  console.log(cartItems)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Routes>
+      <Route path="/" exact element={<Layout cartItems={cartItems} />} >
+        <Route index element={<Items key={items.id} items={items} setCartItems={setCartItems} />} />
+        <Route path="cart" element={<Cart cartItems={cartItems} />} />
+      </Route>
+    </Routes>
+  )
 }
 
-export default App;
+export default App
