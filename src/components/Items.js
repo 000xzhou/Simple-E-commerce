@@ -6,10 +6,10 @@ const Items = ({ items, cartItems, setCartItems }) => {
             <div className="padding-2">
                 <div>{item.name}</div>
                 <div>${item.price}</div>
-                <button onClick={() => { setCartItems(itemed => [{ ...itemed }, { name: item.name, price: item.price }]) }}>Add to cart</button>
+                <button onClick={() => { setCartItems(olditems => [...olditems, { name: item.name, price: item.price }]) }}>Add to cart</button>
             </div>)
     } else {
-        content = <div>Nothing for sale</div>
+        content = <div>Products coming soon</div>
     }
 
     return (
