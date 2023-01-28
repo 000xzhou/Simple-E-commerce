@@ -9,17 +9,17 @@ const Items = ({ items, cartItems, setCartItems }) => {
                 <div>${item.price}</div>
                 <button onClick={() => {
                     cartItems.map(cart => {
-                        console.log(`item.id: ${item.id} \t cart.id: ${cart.id} \t ${Object.values(cart)} @`)
-                        //Object.values(cart).includes(item.id) does not work
+                        console.log(`item.id: ${item.id} \t cart.id: ${cart.id} \t ${Object.values(cart)} @ \t ${Object.values(cart).includes(item.id)}`)
+                        //Object.values(cart).includes(item.id) ... I'm adding it to all and adding exetra too
+                        //cart.id === item.id does not work because it loop though all the cart id so it's both true and false
                         if (Object.values(cart).includes(item.id)) {
-                            let newCart = [{ ...cartItems, quantity: cart.quantity++ }]
-                            return setCartItems(newCart)
+                            let newCart = [...cartItems, { ...cart, quantity: cart.quantity++ }]
+                            setCartItems(newCart)
                         } else {
                             let newCart = [...cartItems, { id: item.id, name: item.name, price: item.price, quantity: 1 }]
-                            return setCartItems(newCart)
+                            setCartItems(newCart)
                         }
                     })
-                    console.log(cartItems)
                 }
                 }>Add to cart</button>
             </div >)
@@ -31,7 +31,7 @@ const Items = ({ items, cartItems, setCartItems }) => {
         <>
             <h2>Products</h2>
             {content}
-            {cartItems.map(i => <p>{i.name}</p>)}
+            {cartItems.map(i => <p>{i.name} ........ quantity: {i.quantity}</p>)}
         </>
     )
 
