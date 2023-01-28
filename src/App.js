@@ -11,12 +11,12 @@ const items = [
 ]
 
 const App = () => {
-  const [cartItems, setCartItems] = useState([])
+  const [cartItems, setCartItems] = useState([{ id: 1, name: 'product 1', price: 2 }])
   console.log(cartItems)
   return (
     <Routes>
       <Route path="/" exact element={<Layout cartItems={cartItems} />} >
-        <Route index element={<Items key={items.id} items={items} setCartItems={setCartItems} />} />
+        <Route index element={<Items key={items.id} items={items} cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="cart" element={<Cart cartItems={cartItems} />} />
       </Route>
     </Routes>

@@ -4,7 +4,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+What it can do:
+- Add to cart
+- Delete from cart
+- Edit amount in cart
+- Login
+- Checkout
+- Add new product (if role = owner)
+- ???
 
 ### `npm start`
 

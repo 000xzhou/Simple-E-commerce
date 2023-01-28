@@ -5,11 +5,14 @@ const Cart = ({ cartItems }) => {
     if (cartItems.length === 0) {
         content = <div>Nothing in cart</div>
     } else {
-        content = cartItems.map(item => <div>{item.name} for {item.price}</div>)
+        content = cartItems.map(item => <div>{item.name} for ${item.price}</div>)
     }
 
     return (
-        <div>{content}</div>
+        <>
+            <h2>Items in Cart</h2>
+            {content}
+        </>
     )
 }
 
